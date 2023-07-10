@@ -1,15 +1,15 @@
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+// import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { LoginForm } from 'components/LoginForm/LoginForm';
 
 export default function Login() {
   return (
-    <HelmetProvider>
+    // <HelmetProvider>
     <div>
-      <Helmet>
+      {/* <Helmet> */}
         <title>Login</title>
-      </Helmet>
+      {/* </Helmet> */}
       <LoginForm />
     </div>
-    </HelmetProvider>
+    // </HelmetProvider>
   );
 }
