@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const Container = styled.div `
+export const Container = styled.form `
  border: 1px solid #FFDAB9;
 position: relative;
 margin: 50px auto;
