@@ -1,19 +1,19 @@
-import { NavLink } from 'react-router-dom';
 import { useAuth } from 'hooks';
+import { StyledLink, Nav} from './Novigation.styled'
 
 export const Navigation = () => {
   const { isLoggedIn } = useAuth();
 
   return (
-    <nav>
-      <NavLink to="/">
-        Home
-      </NavLink>
+    <Nav>
+      <StyledLink to="/">
+        HOME
+      </StyledLink>
       {isLoggedIn && (
-        <NavLink to="/contacts">
-          Contacts
-        </NavLink>
+        <StyledLink to="/contacts">
+          CONTACTS
+        </StyledLink>
       )}
-    </nav>
+    </Nav>
   );
 };

@@ -12,22 +12,22 @@ export function ContactForm() {
     e.preventDefault();
     const form = e.target;
     const name = form.elements.name.value;
-    const phone = form.elements.number.value;
-    addContactFind({ name, phone });
+    const number = form.elements.number.value;
+    addContactFind({ name, number });
     form.reset();
   };
 
-  const addContactFind = ({ name, phone }) => {
+  const addContactFind = ({ name, number }) => {
     if (
       contacts.find(
         item =>
-          item.name.toLowerCase() === name.toLowerCase() || item.phone === phone
+          item.name.toLowerCase() === name.toLowerCase() || item.number === number
       )
     ) {
-      return Notiflix.Notify.info(`${name} or ${phone} is already in contacts`);
+      return Notiflix.Notify.info(`${name} or ${number} is already in contacts`);
     }
 
-    dispatch(addContact({ name, phone }));
+    dispatch(addContact({ name, number }));
   };
 
   return (

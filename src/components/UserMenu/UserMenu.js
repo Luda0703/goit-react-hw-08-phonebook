@@ -1,17 +1,18 @@
 import { useDispatch } from 'react-redux';
 import { logOut } from 'Redux/auth/operations';
 import { useAuth } from 'hooks';
+import { UserContainer, UserName, Button } from './UserMenu.styled'
 
 export const UserMenu = () => {
   const dispatch = useDispatch();
   const { user } = useAuth();
 
   return (
-    <div >
-      <p >Welcome, {user.name}</p>
-      <button type="button" onClick={() => dispatch(logOut())}>
+    <UserContainer >
+      <UserName >Welcome, {user.name}</UserName>
+      <Button type="button" onClick={() => dispatch(logOut())}>
         Logout
-      </button>
-    </div>
+      </Button>
+    </UserContainer>
   );
 };

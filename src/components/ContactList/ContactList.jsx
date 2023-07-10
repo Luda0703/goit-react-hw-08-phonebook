@@ -9,10 +9,10 @@ export const ContactList = () => {
  
   return (
     <Ul>
-      {contacts.map(({ name, phone, id }) => (
+      {contacts.map(({ name, number, id }) => (
         <Li key={id}>
           <P>
-            {name}: {phone}
+            {name}: {number}
           </P>
           <Button type="button" onClick={() => dispatch(deleteContact(id))}>
             Delete
