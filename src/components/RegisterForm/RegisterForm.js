@@ -19,16 +19,16 @@ export const RegisterForm = () => {
   };
 
   return (
-    <Container  onSubmit={handleSubmit} autoComplete="off">
-      <Label >
+    <Container onSubmit={handleSubmit} autoComplete="off">
+      <Label>
         Username
         <Input type="text" name="name" />
       </Label>
-      <Label >
+      <Label>
         Email
         <Input type="email" name="email" />
       </Label>
-      <Label >
+      <Label>
         Password
         <Input type="password" name="password" />
       </Label>

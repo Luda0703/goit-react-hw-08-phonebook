@@ -9,36 +9,36 @@ const initialState = {
 };
 
 const registerFulfilled = (state, action) => {
-    state.user = action.payload.user;
-    state.token = action.payload.token;
-    state.isLoggedIn = true;
-  };
+  state.user = action.payload.user;
+  state.token = action.payload.token;
+  state.isLoggedIn = true;
+};
 
 const logInFulfilled = (state, action) => {
-    state.user = action.payload.user;
-    state.token = action.payload.token;
-    state.isLoggedIn = true;
-}
+  state.user = action.payload.user;
+  state.token = action.payload.token;
+  state.isLoggedIn = true;
+};
 
-const logOutFulfilled = (state) => {
-    state.user = { name: null, email: null };
-    state.token = null;
-    state.isLoggedIn = false;
-}
+const logOutFulfilled = state => {
+  state.user = { name: null, email: null };
+  state.token = null;
+  state.isLoggedIn = false;
+};
 
-const refreshUserPending = (state) => {
-    state.isRefreshing = true;
-}
+const refreshUserPending = state => {
+  state.isRefreshing = true;
+};
 
 const refreshUserFulfilled = (state, action) => {
-    state.user = action.payload;
-    state.isLoggedIn = true;
-    state.isRefreshing = false;
-}
+  state.user = action.payload;
+  state.isLoggedIn = true;
+  state.isRefreshing = false;
+};
 
-const refreshUserRejected = (state) => {
-    state.isRefreshing = false;
-}
+const refreshUserRejected = state => {
+  state.isRefreshing = false;
+};
 
 const authSlice = createSlice({
   name: 'auth',
@@ -50,40 +50,9 @@ const authSlice = createSlice({
       .addCase(refreshUser.rejected, refreshUserRejected)
       .addCase(register.fulfilled, registerFulfilled)
       .addCase(logIn.fulfilled, logInFulfilled)
-      .addCase(logOut.fulfilled, logOutFulfilled)
+      .addCase(logOut.fulfilled, logOutFulfilled);
   },
-
 });
 
 export const authReducer = authSlice.reducer;
-
-
-//   extraReducers: {
-//     [register.fulfilled](state, action) {
-//       state.user = action.payload.user;
-//       state.token = action.payload.token;
-//       state.isLoggedIn = true;
-//     },
-//     [logIn.fulfilled](state, action) {
-    //   state.user = action.payload.user;
-    //   state.token = action.payload.token;
-    //   state.isLoggedIn = true;
-//     },
-//     [logOut.fulfilled](state) {
-    //   state.user = { name: null, email: null };
-    //   state.token = null;
-    //   state.isLoggedIn = false;
-//     },
-//     [refreshUser.pending](state) {
-//       state.isRefreshing = true;
-//     },
-    // [refreshUser.fulfilled](state, action) {
-    //   state.user = action.payload;
-    //   state.isLoggedIn = true;
-    //   state.isRefreshing = false;
-    // },
-//     [refreshUser.rejected](state) {
-//       state.isRefreshing = false;
-//     },
-//   },
 

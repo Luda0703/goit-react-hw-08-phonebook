@@ -21,10 +21,13 @@ export function ContactForm() {
     if (
       contacts.find(
         item =>
-          item.name.toLowerCase() === name.toLowerCase() || item.number === number
+          item.name.toLowerCase() === name.toLowerCase() ||
+          item.number === number
       )
     ) {
-      return Notiflix.Notify.info(`${name} or ${number} is already in contacts`);
+      return Notiflix.Notify.info(
+        `${name} or ${number} is already in contacts`
+      );
     }
 
     dispatch(addContact({ name, number }));
