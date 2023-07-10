@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 import { fetchContacts } from 'Redux/contactsFetch';
 import { useDispatch, useSelector } from 'react-redux';
 
-export function App() {
+export default function Contacts() {
   const isLoading = useSelector(getIsLoading);
   const error = useSelector(getError);
 
